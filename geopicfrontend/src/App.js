@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
+import CitySearch from './Components/CitySearch'
 import logo from './logo.svg';
 import './css/App.css';
 
@@ -20,15 +21,15 @@ class App extends Component {
         <header className="App-header">
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          <CitySearch/>
         </p>
         <MyMapComponent
-  isMarkerShown
-  googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&language=en&region=US&libraries=geometry,drawing,places"
-  loadingElement={<div style={{ height: `100%` }} />}
-  containerElement={<div style={{ height: `400px` }} />}
-  mapElement={<div className="Map" />}
-/>
+            isMarkerShown
+            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&language=en&region=US&libraries=geometry,drawing,places"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div className="Map" />}
+        />
       </div>
     );
   }
