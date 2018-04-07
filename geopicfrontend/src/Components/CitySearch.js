@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, AsyncStorage } from 'react';
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
 //import './css/CitySearch.css';
 
@@ -17,19 +17,23 @@ class CitySearch extends React.Component {
     }
 
     handleSubmit(e) {
-        alert('city searched: ' + this.state.value);
-        e.preventDefault();
+        AsyncStorage.setItem("city_name", this.state.city_name)
+    }
+
+    handleClick(e) {
+        AsyncStorage.getItem("city_name").then((value) => {
+            alert("Get cit_name >> ", value);
+        }).done();
     }
 
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    Location:
-                    <input type="text" value = {this.state.value} onChange={this.handleChange} />
+                    <input type="text" value = {this.state.value} onChange={this.handleChange} placeholder="City: " />
                 </label>
-                <input type="submit" value="Submit" />
             </form>
+
         );
     }
 }
