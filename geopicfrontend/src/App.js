@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
-import CitySearch from './components/CitySearch'
-import UploadImage from './components/UploadImage'
+import CitySearch from './Components/CitySearch'
+import UploadImage from './Components/UploadImage'
 import logo from './logo.svg';
 import './css/App.css';
 
