@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {withScriptjs, withGoogleMap, GoogleMap, Marker} from 'react-google-maps';
-import CitySearch from './Components/CitySearch'
+import CitySearch from './components/CitySearch'
+import UploadImage from './components/UploadImage'
 import logo from './logo.svg';
 import './css/App.css';
 
@@ -23,6 +24,8 @@ class App extends Component {
         <p className="App-intro">
           <CitySearch/>
         </p>
+        <UploadImage/>
+        <div>{window.location.href} </div>
         <MyMapComponent
             isMarkerShown
             googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&language=en&region=US&libraries=geometry,drawing,places"
@@ -30,6 +33,7 @@ class App extends Component {
             containerElement={<div style={{ height: `400px` }} />}
             mapElement={<div className="Map" />}
         />
+
       </div>
     );
   }
