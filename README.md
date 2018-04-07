@@ -17,4 +17,4 @@ Repo for sunhacks 2018 hackathon
 * User interaction
    * REACT.js
 * Hosting
-  * ????
+  * AWS
